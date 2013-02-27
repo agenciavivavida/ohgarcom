@@ -1,0 +1,34 @@
+.ui-body-c, .ui-overlay-c {
+	background: url(../images/stripe.png);
+
+}
+.ui-mobile, .ui-mobile .ui-page {
+	background: url(../images/stripe_white.png);
+
+}
+.ui-bar-a {
+background-image: -webkit-linear-gradient(#921a24,#781620 );
+
+}
+
+.ui-btn-active {
+	border: 1px solid #111;
+	background-image: -webkit-linear-gradient( #a72131,#8c1923 );
+}
+
+.ui-li-heading { margin-bottom: -8px;}
+
+#loginlogo { margin: 0 auto; }
+#loginform {
+	margin: 0 auto;
+max-width: 400px;
+}
+
+.formcadastro {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.ui-field-contain label.ui-select, .ui-field-contain label.ui-input-text,.ui-field-contain .ui-controlgroup-controls { width: 100%; }
+
+.ui-field-contain .ui-select,.ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search, .ui-field-contain div.ui-input-text { width: 95%;}

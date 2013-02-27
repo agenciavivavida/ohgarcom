@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="assets/css/jquery.mobile-1.3.0.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.mobile-1.3.0.min.js"> </script>
+            <script src="assets/js/apiload.js"></script>
+
+            <script src="assets/js/pages.js"></script>
+
+        <!-- User-generated css -->
+        <style>
+        </style>
+        <!-- User-generated js -->
+        <script>
+            try {
+
+    $(function() {
+
+    });
+
+  } catch (error) {
+    console.error("Your javascript has an error: " + error);
+  }
+        </script>
+    </head>
+    <body>
+
+ <div data-role="page" id="login">
+             
+         <div data-role="content">
+               <div data-role="popup" id="erroLogin" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+                    <h1>Erro</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title">Usuário ou senha inválida.</h3>
+                    <p>Por favor tente novamente. </p>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Voltar</a>
+                 </div>
+            </div>
+                           
+                    <div id="loginlogo"><img src="assets/images/centerlogo.png" style="width:100%;"/></div>
+
+                    <div id="loginform">
+                      <ul data-role="listview" data-inset="true" class="profilelist" data-divider-theme="a">
+                        <li data-role="fieldcontain">
+                          <label for="username">Usuário</label>
+                          <input type="text" name="username" id="username" value="" placeholder="usuario"/>
+                        </li>
+                        <li data-role="fieldcontain" >
+                          <label for="password">Senha</label>
+                          <input type="password" name="password" id="password" value="" placeholder="senha"/>
+                        </li>
+                      </ul>
+                      </ul>
+                       <div style="text-align: center">
+                            <a href="#" id="loginBtn" data-role="button" data-transition="flip" data-inline="true"> Login </a><br/>
+                        </div>
+                 </div>
+
+            </div>
+
+        </div>
+        <!-- Home -->
+        <div data-role="page" id="home">
+            <div data-theme="a" data-role="header">
+               
+                <h4>
+                   Grupo G15
+                </h4>
+            </div>
+            <div data-role="content">
+               <h2 id="nome_evento"> Almoço 20.02 </h2>
+
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed" data-id="rodape">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                         <li>
+                            <a href="#evento" data-transition="flip" data-theme="" data-icon="plus" class="ui-btn-active ui-state-persist">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cadastrar" data-transition="flip" data-theme="" data-icon="plus">
+                                Cadastrar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#confirmar" data-transition="flip" data-theme="" data-icon="check">
+                                Confirmar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#presentes" data-transition="flip" data-theme="" data-icon="grid">
+                                Presentes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+        <!-- EVENTO-->
+         <div data-role="page" id="evento">
+            <div data-theme="a" data-role="header">
+               
+                <h4>
+                   Grupo G15
+                </h4>
+            </div>
+            <div data-role="content">
+              <ul data-role="listview" data-divider-theme="c" data-inset="false" id="eventos">
+            <li data-role="list-divider" role="heading">
+                Selecione seu Evento
+            </li>
+            <li data-theme="a">
+                <a href="#" data-transition="slide">
+                   Carregando Eventos...
+                </a>
+            </li>
+        </ul>
+            </div>
+             
+        </div>
+       
+        <!-- CADASTRAR -->
+         <div data-role="page" id="cadastrar">
+            <div data-theme="a" data-role="header">
+               
+                <h4>
+                   G15 - Cadastrar
+                </h4>
+            </div>
+            <div data-role="content">
+                <div data-role="popup" id="erroCadastro" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+                    <h1>Erro ao cadastrar</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title">Alguns campos obrigatórios não foram preenchidos.</h3>
+                    <p>Por favor verifique novamente antes de cadastrar. </p>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Voltar</a>
+                 </div>
+            </div>
+<div data-role="popup" id="sucessoCadastro" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+    <div data-role="header" data-theme="a" class="ui-corner-top">
+        <h1>Pessoa Cadastrada</h1>
+    </div>
+    <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+        <h3 class="ui-title">Esta pessoa foi cadastrada com sucesso e sua presença confirmada.</h3>
+     
+         <a href="#confirmar" data-role="button" data-inline="true" data-transition="flip" data-theme="b">Voltar para Confirmação</a>
+    </div>
+</div>
+                <div class="formcadastro"> 
+
+                <h2>
+            Cadastro de Visitantes
+        </h2>
+
+        <h3>
+            Dados da Empresa
+        </h3>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="empresa">
+                            Nome da Empresa
+                        </label>
+                        <input name="empresa" id="empresa" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                    <div data-role="fieldcontain">
+                    <label for="segmento">
+                        Segmento da Empresa
+                    </label>
+                    <select id="segmento" name="segmento">
+                        
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="telefones">
+                            Telefones
+                        </label>
+                        <input name="telefones" id="telefones" placeholder="" value="" type="tel">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="email_empresa">
+                            Email da empresa
+                        </label>
+                        <input name="email_empresa" id="email_empresa" placeholder="" value=""
+                        type="email">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="website">
+                           Website da empresa
+                        </label>
+                        <input name="website" id="website" placeholder="" value=""
+                        type="url">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="endereco">
+                            Endereço
+                        </label>
+                        <input name="endereco" id="endereco" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain" >
+                    <fieldset data-role="controlgroup">
+                        <label for="cep">
+                            CEP
+                        </label>
+                        <input name="cep" id="cep" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                <h3>
+                    Dados de Cadastro
+                </h3>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="name">
+                            Nome Completo
+                        </label>
+                        <input name="name" id="name" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="cargo">
+                        Cargo
+                    </label>
+                    <select id="cargo" name="cargo">
+                        
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="email_pessoa">
+                            Email Pessoal
+                        </label>
+                        <input name="email_pessoa" id="email_pessoa" placeholder="" value="" type="email">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="telefones_pessoa">
+                            Telefones
+                        </label>
+                        <input name="telefones_pessoa" id="telefones_pessoa" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain" >
+                    <fieldset data-role="controlgroup">
+                        <label for="aniversario">
+                            Aniversário
+                        </label>
+                        <input name="aniversario" id="aniversario" placeholder="__/__/____" value="" type="text">
+                    </fieldset>
+                </div>
+                 <div data-role="fieldcontain" >
+                    <fieldset data-role="controlgroup">
+                        <label for="observacoes">
+                            Observações Adicionais
+                        </label>
+                        <textarea style="height: 90px" name="observacoes" id="observacoes" placeholder="Observações adicionais"></textarea>
+                    </fieldset>
+                </div>
+                <a id="cadastrarbtn" data-role="button" href="javascript:cadastrar();">
+                    Cadastrar e Confirmar Presença
+                </a>
+                    </div>
+                    <div data-theme="a" data-role="footer" data-position="fixed" data-id="rodape">
+                        <div data-role="navbar" data-iconpos="top">
+                            <ul>
+                                 <li>
+                                    <a href="#evento" data-transition="flip" data-theme="" data-icon="plus">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#cadastrar" data-transition="flip" data-theme="" data-icon="plus" class="ui-btn-active ui-state-persist">
+                                        Cadastrar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#confirmar" data-transition="flip" data-theme="" data-icon="check">
+                                        Confirmar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#presentes" data-transition="flip" data-theme="" data-icon="grid">
+                                        Presentes
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- END CADASTRAR -->
+        <!-- CONFIRMAR -->
+         <div data-role="page" id="confirmar">
+            <div data-theme="a" data-role="header">
+               
+                <h4>
+                   G15 - Confirmar
+                </h4>
+            </div>
+            <div data-role="content">
+              <div data-role="content">
+                <div data-role="popup" id="confirmado" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+                    <h1>Confirmado</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title"><span id="nomeusuario"> </span> confirmado(a) para o evento <span id="event_name"> </span></h3>
+                     <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Voltar</a>
+                 </div>
+            </div>
+            <div data-role="popup" id="erroConfirmacao" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+                    <h1>Erro</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                    <h3 class="ui-title">Aconteceu algum erro durante a confirmação. Por favor tente novamente. </h3>
+                     <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Voltar</a>
+                 </div>
+            </div>
+                <p>Digite abaixo o nome da pessoa ou o nome da empresa.</p>
+                <ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Digite o nome aqui" data-filter-theme="d" data-split-icon="check" data-split-theme="a"></ul> 
+           </div>
+            <div data-theme="a" data-role="footer" data-position="fixed" data-id="rodape" >
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                         <li>
+                            <a href="#evento" data-transition="flip" data-theme="" data-icon="plus">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cadastrar" data-transition="flip" data-theme="" data-icon="plus">
+                                Cadastrar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#confirmar" data-transition="flip" data-theme="" data-icon="check" class="ui-btn-active ui-state-persist">
+                                Confirmar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#presentes" data-transition="flip" data-theme="" data-icon="grid">
+                                Presentes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- END CONFIRMAR -->
+        <!-- PRESENTES -->
+ <div data-role="page" id="presentes">
+            <div data-theme="a" data-role="header">
+               
+                <h4>
+                   G15 - Presentes
+                </h4>
+            </div>
+            <div data-role="content">
+            
+    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="margin: 0 auto; width: 250px;">
+    
+        <input type="radio" name="tipoLista" id="radio-choice-h-2a" value="1">
+        <label for="radio-choice-h-2a">Empresas</label>
+        <input type="radio" name="tipoLista" id="radio-choice-h-2b" value="2" checked="checked">
+        <label for="radio-choice-h-2b">Pessoas</label>
+        <input type="radio" name="tipoLista" id="radio-choice-h-2c" value="3">
+        <label for="radio-choice-h-2c">Visitantes</label>
+    </fieldset>
+    <div style="height: 30px"> </div>
+
+     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="width: 350px !important;margin: 0 auto; width: 250px;" id="tipo_empresas" >
+    
+        <input type="radio" name="tipoEmpresa" id="radio-choice-e2a" value="15">
+        <label for="radio-choice-e2a">Associadas</label>
+        <input type="radio" name="tipoEmpresa" id="radio-choice-e2b" value="16">
+        <label for="radio-choice-e2b">Apoiadoras</label>
+        <input type="radio" name="tipoEmpresa" id="radio-choice-e2c" value="14" checked="checked">
+        <label for="radio-choice-e2c">Mantenedoras</label>
+    </fieldset>
+    <div style="height: 30px"> </div>
+
+           <ul data-role="listview" data-divider-theme="c" data-inset="false" id="presenteslist">
+            <li data-role="list-divider" role="heading" data-theme="a">
+                Lista de Presença 
+            </li>
+            <li>
+               
+                   Carregando...
+                
+            </li>
+        </ul>
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed" data-id="rodape">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                         <li>
+                            <a href="#evento" data-transition="flip" data-theme="" data-icon="plus">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cadastrar" data-transition="flip" data-theme="" data-icon="plus" >
+                                Cadastrar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#confirmar" data-transition="flip" data-theme="" data-icon="check">
+                                Confirmar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#presentes" data-transition="flip" data-theme="" data-icon="grid" class="ui-btn-active ui-state-persist">
+                                Presentes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PRESENTES -->
+    </body>
+</html>
